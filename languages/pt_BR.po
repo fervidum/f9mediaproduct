@@ -1,0 +1,56 @@
+# Copyright (C) 2020 Fervidum
+# This file is distributed under the same license as the F9mediaproduct plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: F9mediaproduct 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/f9mediaproduct\n"
+"POT-Creation-Date: 2020-08-25T23:01:13-03:00\n"
+"PO-Revision-Date: 2020-08-25 23:01-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"X-Domain: f9mediaproduct\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Plugin Name of the plugin
+msgid "F9mediaproduct"
+msgstr "Produto Mídia"
+
+#. Plugin URI of the plugin
+msgid "https://fervidum.github.io/f9mediaproduct/"
+msgstr "https://fervidum.github.io/f9mediaproduct/"
+
+#. Description of the plugin
+msgid "WooCommerce Media Product type add product types to images and videos."
+msgstr "Adiciona ao WooCommerce tipos de produto para imagens e vídeos."
+
+#. Author of the plugin
+msgid "Fervidum"
+msgstr "Fervidum"
+
+#. Author URI of the plugin
+msgid "https://fervidum.github.io/"
+msgstr "https://fervidum.github.io/"
+
+#. translators: Product type
+#: includes/admin/class-f9mediaproduct-admin.php:36
+msgid "%s product"
+msgstr "Produto %s"
+
+#: includes/f9mediaproduct-core-functions.php:42
+#: includes/f9mediaproduct-core-functions.php:43
+msgid "Image"
+msgid_plural "Images"
+msgstr[0] "Imagem"
+msgstr[1] "Imagens"
+
+#: includes/f9mediaproduct-core-functions.php:46
+#: includes/f9mediaproduct-core-functions.php:47
+msgid "Video"
+msgid_plural "Videos"
+msgstr[0] "Vídeo"
+msgstr[1] "Vídeos"

@@ -1,0 +1,4 @@
+require:
+  - bin/link.php
+  - bin/pot.php
+  - bin/ln-i18n.php
