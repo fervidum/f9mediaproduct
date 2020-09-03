@@ -32,6 +32,7 @@ class F9mediaproduct_Admin {
 		if ( file_exists( $filename ) ) {
 			include_once $filename;
 		}
+		include_once dirname( __FILE__ ) . '/class-f9mediaproduct-admin-post-types.php';
 	}
 
 	/**
