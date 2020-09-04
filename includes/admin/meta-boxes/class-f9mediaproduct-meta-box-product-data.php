@@ -53,7 +53,7 @@ class F9mediaproduct_Meta_Box_Product_Data {
 			apply_filters(
 				'f9mediaproduct_product_data_tabs',
 				array(
-					'inventory'      => array(
+					'f9mediaproduct_inventory'      => array(
 						'label'    => __( 'Inventory', 'woocommerce' ),
 						'target'   => 'f9mediaproduct_inventory_product_data',
 						'class'    => $classes,
