@@ -18,7 +18,8 @@ class F9mediaproduct_Admin_Meta_Boxes {
 	 * Constructor.
 	 */
 	public function __construct() {
-		add_action( 'woocommerce_product_data_tabs', 'F9mediaproduct_Meta_Box_Product_Data::product_data_tabs', 20, 2 );
+		add_filter( 'woocommerce_product_data_tabs', 'F9mediaproduct_Meta_Box_Product_Data::product_data_tabs' );
+		add_action( 'woocommerce_product_data_panels', 'F9mediaproduct_Meta_Box_Product_Data::output_tabs' );
 	}
 }
 

@@ -24,8 +24,9 @@ class F9_WC_Product_Image extends WC_Product_Variable {
 		$this->data = array_merge(
 			$this->data,
 			array(
-				'virtual'      => true,
-				'downloadable' => true,
+				'virtual'           => true,
+				'downloadable'      => true,
+				'sold_individually' => true,
 			)
 		);
 		parent::__construct( $product );
