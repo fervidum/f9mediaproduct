@@ -33,6 +33,7 @@ class F9mediaproduct_Admin {
 			include_once $filename;
 		}
 		include_once dirname( __FILE__ ) . '/class-f9mediaproduct-admin-post-types.php';
+		include_once dirname( __FILE__ ) . '/class-f9mediaproduct-admin-assets.php';
 	}
 
 	/**
@@ -52,7 +53,7 @@ class F9mediaproduct_Admin {
 	public function product_type_selector( $selector_options ) {
 		$remove_defaults = apply_filters(
 			'f9mediaproduct_remove_default_types',
-			get_option( 'f9mediaproduct_remove_default_types', false )
+			get_option( 'f9mediaproduct_remove_default_types', true )
 		);
 		if ( $remove_defaults ) {
 			$selector_options = array();

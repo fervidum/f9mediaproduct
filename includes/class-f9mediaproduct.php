@@ -71,6 +71,7 @@ final class F9mediaproduct {
 	 */
 	private function define_constants() {
 		$this->define( 'F9MEDIAPRODUCT_ABSPATH', dirname( F9MEDIAPRODUCT_PLUGIN_FILE ) . '/' );
+		$this->define( 'F9MEDIAPRODUCT_VERSION', $this->version );
 	}
 
 	/**
@@ -132,6 +133,7 @@ final class F9mediaproduct {
 		 * Core classes.
 		 */
 		include_once F9MEDIAPRODUCT_ABSPATH . 'includes/f9mediaproduct-core-functions.php';
+		include_once F9MEDIAPRODUCT_ABSPATH . 'includes/class-f9mediaproduct-ajax.php';
 
 		if ( $this->is_request( 'admin' ) ) {
 			include_once F9MEDIAPRODUCT_ABSPATH . 'includes/admin/class-f9mediaproduct-admin.php';
@@ -192,5 +194,14 @@ final class F9mediaproduct {
 		load_textdomain( 'f9mediaproduct', WP_LANG_DIR . '/f9mediaproduct/f9mediaproduct-' . $locale . '.mo' );
 		load_plugin_textdomain( 'f9mediaproduct', false, plugin_basename( dirname( F9MEDIAPRODUCT_PLUGIN_FILE ) ) . '/languages' );
 		load_textdomain( 'f9mediaproduct', dirname( F9MEDIAPRODUCT_PLUGIN_FILE ) . '/languages/' . $locale . '.mo' );
+	}
+
+	/**
+	 * Get the plugin url.
+	 *
+	 * @return string
+	 */
+	public function plugin_url() {
+		return untrailingslashit( plugins_url( '/', F9MEDIAPRODUCT_PLUGIN_FILE ) );
 	}
 }
