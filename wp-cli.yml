@@ -2,3 +2,6 @@ require:
   - bin/link.php
   - bin/pot.php
   - bin/ln-i18n.php
+  - bin/sass.php
+  - bin/postcss.php
+  - bin/cleancss.php

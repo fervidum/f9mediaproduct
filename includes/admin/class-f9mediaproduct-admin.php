@@ -20,7 +20,6 @@ class F9mediaproduct_Admin {
 	public function __construct() {
 		add_action( 'init', array( $this, 'includes' ) );
 		add_action( 'selfd_register', array( $this, 'register_selfdirectory' ) );
-		add_filter( 'product_type_selector', array( $this, 'product_type_selector' ), 9 );
 	}
 
 	/**
@@ -41,32 +40,6 @@ class F9mediaproduct_Admin {
 	 */
 	public function register_selfdirectory() {
 		selfd( F9MEDIAPRODUCT_PLUGIN_FILE );
-	}
-
-	/**
-	 * Adds in product type selector.
-	 *
-	 * @param array $selector_options Selector options.
-	 * @since 1.0.0
-	 * @return array
-	 */
-	public function product_type_selector( $selector_options ) {
-		$remove_defaults = apply_filters(
-			'f9mediaproduct_remove_default_types',
-			get_option( 'f9mediaproduct_remove_default_types', true )
-		);
-		if ( $remove_defaults ) {
-			$selector_options = array();
-		}
-		$types = (array) f9mediaproduct_types();
-		foreach ( $types as $type ) {
-			$selector_options[ $type ] = sprintf(
-				/* translators: Product type */
-				__( '%s product', 'f9mediaproduct' ),
-				f9mediaproduct_label( $type )
-			);
-		}
-		return $selector_options;
 	}
 }
 

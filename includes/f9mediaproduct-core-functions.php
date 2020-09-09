@@ -11,6 +11,33 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Adds in product type selector.
+ *
+ * @param array $selector_options Selector options.
+ * @since 1.0.0
+ * @return array
+ */
+function f9mediaproduct_product_type_selector( $selector_options ) {
+	$remove_defaults = apply_filters(
+		'f9mediaproduct_remove_default_types',
+		get_option( 'f9mediaproduct_remove_default_types', false )
+	);
+	if ( $remove_defaults ) {
+		$selector_options = array();
+	}
+	$types = (array) f9mediaproduct_types();
+	foreach ( $types as $type ) {
+		$selector_options[ $type ] = sprintf(
+			/* translators: Product type */
+			__( '%s product', 'f9mediaproduct' ),
+			f9mediaproduct_label( $type )
+		);
+	}
+	return $selector_options;
+}
+add_filter( 'product_type_selector', 'f9mediaproduct_product_type_selector', 9 );
+
+/**
  * Get media product types.
  *
  * @return array

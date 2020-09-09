@@ -62,8 +62,9 @@ final class F9mediaproduct {
 	 * @since 1.0.0
 	 */
 	private function init_hooks() {
-		add_action( 'woocommerce_init', array( $this, 'include_product_classes' ) );
 		add_action( 'init', array( $this, 'init' ), 0 );
+		add_action( 'woocommerce_init', array( $this, 'include_product_classes' ) );
+		add_action( 'woocommerce_init', 'F9mediaproduct_AJAX::init' );
 	}
 
 	/**
