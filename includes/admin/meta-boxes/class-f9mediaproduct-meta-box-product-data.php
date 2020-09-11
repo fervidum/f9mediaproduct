@@ -203,13 +203,12 @@ class F9mediaproduct_Meta_Box_Product_Data {
 
 		$shows = array(
 			'inventory',
-			'attribute',
 			'variations',
 		);
 
 		if ( $types ) {
 			foreach ( $tabs as $key => &$tab ) {
-				if ( in_array( $key, $shows, true ) ) {
+				if ( in_array( $key, $shows, true ) || 'attribute' === $key ) {
 					continue;
 				}
 				if ( ! isset( $tab['class'] ) ) {

@@ -5,3 +5,4 @@ require:
   - bin/sass.php
   - bin/postcss.php
   - bin/cleancss.php
+  - bin/lint-js.php

@@ -37,7 +37,7 @@ if ( ! class_exists( 'F9mediaproduct_Admin_Assets', false ) ) :
 			wp_register_style( 'f9mediaproduct_admin_styles', f9mediaproduct()->plugin_url() . '/assets/css/f9mediaproduct-admin.css', array(), $version );
 
 			// Admin styles for WC pages only.
-			if ( function_exists( 'wc_get_screen_ids' ) && in_array( $screen_id, wc_get_screen_ids() ) ) {
+			if ( function_exists( 'wc_get_screen_ids' ) && in_array( $screen_id, wc_get_screen_ids(), true ) ) {
 				wp_enqueue_style( 'f9mediaproduct_admin_styles' );
 			}
 		}
@@ -54,16 +54,17 @@ if ( ! class_exists( 'F9mediaproduct_Admin_Assets', false ) ) :
 			$suffix    = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$version   = F9MEDIAPRODUCT_VERSION;
 
-			// Register scripts.
-			wp_register_script( 'f9mediaproduct_admin', f9mediaproduct()->plugin_url() . '/assets/js/admin/f9mediaproduct_admin.js', array( 'jquery', 'jquery-blockui', 'jquery-ui-sortable', 'jquery-ui-widget', 'jquery-ui-core', 'jquery-tiptip' ), $version );
+			// Meta boxes.
+			if ( in_array( $screen_id, array( 'product', 'edit-product' ), true ) ) {
+				wp_register_script(
+					'f9mediaproduct-admin-media-meta-boxes',
+					f9mediaproduct()->plugin_url() . '/assets/js/admin/meta-boxes-product-media.js',
+					array( 'wc-admin-product-meta-boxes' ),
+					$version,
+					false
+				);
 
-			// WooCommerce admin pages.
-			if ( function_exists( 'wc_get_screen_ids' ) && in_array( $screen_id, wc_get_screen_ids() ) ) {
-				wp_enqueue_script( 'f9mediaproduct_admin' );
-
-				$params = array();
-
-				wp_localize_script( 'f9mediaproduct_admin', 'f9mediaproduct_admin', $params );
+				wp_enqueue_script( 'f9mediaproduct-admin-media-meta-boxes' );
 			}
 
 		}
